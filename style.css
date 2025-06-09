@@ -33,17 +33,3 @@ p .alinha{
 .img-slide{
     max-height: 400px;
 }
-footer {
-  background-color: #106cc2;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 16px;
-  flex-shrink: 0;
-  width: 100vw;
-  box-sizing: border-box;
-  margin-left: 120; /* aqui você pode ajustar o valor para aumentar a margem esquerda */
-}
-
-
-
