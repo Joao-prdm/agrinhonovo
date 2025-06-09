@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Global styles for full height and flex column layout */
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo da seção de cabeçalho */
+        .cabecalho {
+            color: #fff; /* Texto branco */
+            background-color: #4CAF50; /* Cor de fundo azul */
+            text-align: center;
+            padding: 15px 0; /* Diminui o padding para ajustar o tamanho */
+            margin: 0; /* Sem margem */
+            position: absolute; /* Posicionamento absoluto para ficar no topo */
+            top: 0; /* Alinha no topo */
+            width: 100%; /* Ocupa toda a largura */
+            z-index: 10; /* Garante que fique acima dos outros elementos */
+        }
+
+        /* Animação de fade-in e slide-up */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animação tipo minhoca (subindo e descendo com pausa) */
+        @keyframes wormEffect {
+            0% {
+                transform: translateY(0); /* Inicial na posição original */
+            }
+            25% {
+                transform: translateY(-10px); /* Move para cima */
+            }
+            50% {
+                transform: translateY(10px); /* Move para baixo */
+            }
+            75% {
+                transform: translateY(-10px); /* Move para cima novamente */
+            }
+            100% {
+                transform: translateY(0); /* Volta à posição original */
+            }
+        }
+
+        /* Estilo para cada letra individualmente */
+        .cabecalho h1 span,
+        .cabecalho h3 span {
+            display: inline-block;
+            animation: wormEffect 1.5s ease-in-out 1 forwards, pauseEffect 3s infinite; /* Adicionando pausa após o efeito */
+        }
+
+        /* Efeito de pausa entre animações */
+        @keyframes pauseEffect {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .cabecalho h1 span:nth-child(1) { animation-delay: 0s; }
+        .cabecalho h1 span:nth-child(2) { animation-delay: 0.1s; }
+        .cabecalho h1 span:nth-child(3) { animation-delay: 0.2s; }
+        .cabecalho h1 span:nth-child(4) { animation-delay: 0.3s; }
+        .cabecalho h1 span:nth-child(5) { animation-delay: 0.4s; }
+        .cabecalho h1 span:nth-child(6) { animation-delay: 0.5s; }
+        .cabecalho h1 span:nth-child(7) { animation-delay: 0.6s; }
+        .cabecalho h1 span:nth-child(8) { animation-delay: 0.7s; }
+        .cabecalho h1 span:nth-child(9) { animation-delay: 0.8s; }
+        .cabecalho h1 span:nth-child(10) { animation-delay: 0.9s; }
+
+        .cabecalho h3 span:nth-child(1) { animation-delay: 0s; }
+        .cabecalho h3 span:nth-child(2) { animation-delay: 0.1s; }
+        .cabecalho h3 span:nth-child(3) { animation-delay: 0.2s; }
+        .cabecalho h3 span:nth-child(4) { animation-delay: 0.3s; }
+        .cabecalho h3 span:nth-child(5) { animation-delay: 0.4s; }
+        .cabecalho h3 span:nth-child(6) { animation-delay: 0.5s; }
+        .cabecalho h3 span:nth-child(7) { animation-delay: 0.6s; }
+
+        /* Estilizando o h1 */
+        .cabecalho h1 {
+            font-size: 30px; /* Tamanho da fonte ajustado */
+            margin: 0;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(50px); /* Começa movido para baixo */
+            animation: fadeInUp 1.5s forwards 0.5s;
+        }
+
+        /* Estilizando o h3 */
+        .cabecalho h3 {
+            font-size: 18px; /* Tamanho da fonte ajustado */
+            margin: 10px 0;
+            opacity: 0;
+            transform: translateY(50px); /* Começa movido para baixo */
+            animation: fadeInUp 1.5s forwards 1s;
+        }
+
+        /* Adicionando margem ao conteúdo para evitar sobreposição e push footer down */
+        .content {
+            margin-top: 100px; /* Ajusta a margem superior do conteúdo */
+            flex: 1; /* Allows content to grow and push footer down */
+        }
+
+        /* Button Styles */
+        .light-sweep-button {
+            position: relative;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            color: white !important;
+            background-color: #28a745; /* fallback */
+        }
+
+        .light-sweep-button.green {
+            background-color: #28a745 !important; /* verde fixo */
+        }
+
+        .light-sweep-button.green::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.15) 50%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            transform: rotate(25deg) translateX(-100%);
+            transition: transform 0.7s ease;
+            pointer-events: none;
+            border-radius: 8px;
+            z-index: 0;
+        }
+
+        .light-sweep-button.green:hover::before {
+            transform: rotate(25deg) translateX(100%);
+        }
+
+        .light-sweep-button.green:hover {
+            box-shadow: 0 8px 20px rgba(57, 255, 20, 0.7);
+            transform: translateY(-5px);
+        }
+
+        .light-sweep-button > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes housePulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 3px limegreen);
+            }
+            50% {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 6px limegreen);
+            }
+        }
+
+        .house {
+            display: inline-block;
+            animation: housePulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 8px #ffd700, 0 0 15px #ffea00;
+                color: #ffd700;
+            }
+            50% {
+                opacity: 0.6;
+                text-shadow: none;
+                color: #ffea00;
+            }
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
+        .fancy-button {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #ddd;
+            background: linear-gradient(270deg, #444, #666, #444);
+            background-size: 600% 600%;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .fancy-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.15) 50%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            transform: rotate(25deg) translateX(-100%);
+            transition: transform 0.7s ease;
+            pointer-events: none;
+        }
+
+        .fancy-button:hover::before {
+            transform: rotate(25deg) translateX(100%);
+        }
+
+        .fancy-button:hover {
+            box-shadow:
+                0 2px 4px #ffd70080,
+                2px 0 4px #ffea0080,
+                -2px 0 4px #ffd70080,
+                0 4px 6px #ffea0080;
+            transform: translateY(-5px);
+            color: #fff;
+            text-shadow: none;
+        }
+
+        .fancy-button .flash {
+            display: inline-block;
+            animation: pulse 2s infinite, swing 4s infinite ease-in-out;
+            color: #ffd700;
+        }
+
+        /* Animação brilho suave + leve movimento nos ícones */
+        @keyframes waterPulse {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 10px #00bfff, 0 0 20px #00e5ff;
+            }
+            50% {
+                opacity: 0.7;
+                text-shadow: none;
+            }
+        }
+
+        @keyframes waveSwing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* Animação de fundo com ondas leves (gradiente azul animado) */
+        @keyframes waveBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .water-button {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            color: #d0f0ff;
+            background: linear-gradient(270deg, #005f99, #0099cc, #005f99);
+            background-size: 600% 600%;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            animation: waveBG 12s ease infinite;
+        }
+
+        /* Brilho sutil que passa ao passar o mouse */
+        .water-button::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 220%;
+            height: 220%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            transform: rotate(25deg) translateX(-100%);
+            transition: transform 0.7s ease;
+            pointer-events: none;
+        }
+
+        .water-button:hover::before {
+            transform: rotate(25deg) translateX(100%);
+        }
+
+        /* Levantar o botão no hover */
+        .water-button:hover {
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.8);
+            transform: translateY(-6px);
+            color: #e0ffff;
+        }
+
+        /* Ícones com brilho e movimento de onda */
+        .water-button .wave-icon {
+            display: inline-block;
+            animation: waterPulse 3s infinite ease-in-out, waveSwing 4s infinite ease-in-out;
+            color: #00bfff;
+            margin: 0 6px;
+        }
+
+        .btn-custom {
+            background-color: #198754;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 10px 20px;
+            transition: 0.3s;
+            border: none;
+            position: relative;
+            top: -55px; /* aqui sobe o botão – aumente o valor negativo para subir mais */
+        }
+
+        .btn-custom:hover {
+            background-color: #145c38;
+            transform: scale(1.05);
+        }
+
+        .equal-height {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 100%; /* garante que o width seja uniforme */
+        }
+
+        /* Footer Styles */
+        footer {
+            width: 100%;
+            background-color: #106cc2;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 16px;
+            margin-top: auto; /* Pushes the footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <section class="cabecalho">
+        <h1>
+            <span>A</span><span>G</span><span>R</span><span>I</span><span>N</span><span>H</span><span>O</span><span> </span><span>2</span><span>0</span><span>2</span><span>5</span>
+        </h1>
+        <h3>
+            <span>F</span><span>e</span><span>s</span><span>t</span><span>e</span><span>j</span><span>a</span><span>n</span><span>d</span><span>o</span><span> </span><span>C</span><span>o</span><span>n</span><span>e</span><span>x</span><span>ã</span><span>o</span><span> </span><span>C</span><span>a</span><span>m</span><span>p</span><span>o</span><span> </span><span>C</span><span>i</span><span>d</span><span>a</span><span>d</span><span>e</span>
+        </h3>
+    </section>
+
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="container text-center mt-4">
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="index.html">
+                    <button type="button" class="light-sweep-button green m-2">
+                        <span class="house">🏠</span> Página Inicial <span class="house">🏠</span>
+                    </button>
+                </a>
+
+                <a href="energia.html">
+                    <button type="button" class="btn btn-secondary m-2 fancy-button">
+                        <span class="flash">⚡︎</span> Energia Rural <span class="flash">⚡︎</span>
+                    </button>
+                </a>
+
+                <a href="agua.html">
+                    <button type="button" class="btn btn-primary m-2 water-button">
+                        <span class="wave-icon">💧</span> Acessibilidade a Água <span class="wave-icon">💧</span>
+                    </button>
+                </a>
+
+                <a href="producao.html">
+                    <button type="button" class="btn btn-warning m-2">🚜 Produção 🚜</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-6">
+                    <h2>O que podemos falar sobre a zona rural?</h2>
+                    <p class="alinha">
+                        A zona rural é a área localizada fora dos centros urbanos, onde predominam as atividades agrícolas, pecuárias e a convivência mais próxima com a natureza. É nesse espaço que se produz grande parte dos alimentos que chegam às cidades, além de recursos essenciais para a indústria e a economia do país.
+                        A vida no campo é marcada por um ritmo diferente, com desafios como o acesso limitado a serviços públicos, infraestrutura e tecnologia. Contudo, a zona rural é fundamental para a sustentabilidade ambiental, preservação cultural e manutenção das tradições.
+                        Investir no desenvolvimento rural é garantir a qualidade de vida das pessoas que vivem nessas regiões, promovendo inclusão social, melhor infraestrutura, educação, saúde e acesso a tecnologias que aumentem a produtividade e conservem os recursos naturais.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid img-agro br-3" src="assets/image/IMG-20211214-WA0021.jpg" alt="Imagem representativa de plantação.">
+                </div>
+            </div>
+
+            <button type="button" class="btn-custom" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions">
+                🌾 Descubra a Conexão Campo-Cidade 🌾
+            </button>
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"> 🌱 Uma parceria que transforma realidades 🌿 </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>🍃 A integração entre o campo e a cidade é essencial para o crescimento sustentável de ambos. O campo, com sua produção agrícola, sustenta as cidades, enquanto as cidades oferecem tecnologia e inovação que podem melhorar a vida no campo. No entanto, muitas vezes essas duas realidades não estão tão conectadas quanto deveriam.
+                        "Agrinho: Integração Campo e Cidade" busca promover essa união, mostrando como a colaboração entre o rural e o urbano pode trazer benefícios para todos. A troca de conhecimentos e experiências fortalece tanto o desenvolvimento agrícola quanto a qualidade de vida nas cidades.
+                        Este é o momento de explorar como essas duas forças podem se unir para um futuro mais próspero e equilibrado! 🌽
+                    </p>
+                    <img src="assets/image/IMG-20210706-WA0032.jpg" alt="Sample Image" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            A Integração entre Campo e Cidade
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Festejar a conexão entre o campo e a cidade é reconhecer a importância do trabalho rural e como ele sustenta a vida urbana. O campo gera alimentos e recursos essenciais, e a cidade oferece infraestrutura e serviços que beneficiam os produtores, fortalecendo essa parceria vital.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Desafios e Oportunidades
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">A relação entre o campo e a cidade é marcada por desafios e oportunidades de colaboração. Enquanto o campo fornece os recursos necessários, a cidade oferece o desenvolvimento e o consumo. Festejar essa conexão ajuda a construir um entendimento mútuo e a fortalecer a cooperação entre ambos.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Sustentabilidade na Conexão Campo-Cidade
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">A conexão entre campo e cidade também é uma questão de inovação e sustentabilidade. Com novas tecnologias, o campo se moderniza, beneficiando a cidade e garantindo um futuro mais equilibrado. Celebrar essa integração é valorizar práticas sustentáveis que melhoram a vida em ambos os espaços.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pt-5">
+                <h3 class="text-center pb-3">Saiba um pouco mais sobre cada área.</h3>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 equal-height">
+                            <img src="./assets/image/IMG-20200927-WA0014.jpg" class="img-card card-img-top" alt="Acessibilidade a agua" style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Acessibilidade a Água</h5>
+                                <p class="card-text">A importância da água no campo...</p>
+                                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalAgua">Saiba mais sobre:</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 equal-height">
+                            <img src="./assets/image/spigjnsfdipuh.jpg" class="img-card card-img-top" alt="energia rural" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Energia rural</h5>
+                                <p class="card-text">Como a energia impacta a vida no campo...</p>
+                                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalEnergia">Saiba mais sobre:</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 equal-height">
+                            <img src="./assets/image/IMG-20210626-WA0006.jpg" class="img-card card-img-top" alt="produção" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Produção e industrialização</h5>
+                                <p class="card-text">Do campo à cidade: como tudo começa...</p>
+                                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalProducao">Saiba mais sobre:</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="carouselExample" class="carousel slide pt-4 pb-3">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active bg-light p-5">
+                    <div class="d-block w-100">
+                        <h3 class="mb-3">O Campo Alimenta a Cidade</h3>
+                        <p class="lead">Mais de 70% dos alimentos consumidos nas cidades brasileiras vêm da agricultura familiar.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item bg-light p-5">
+                    <div class="d-block w-100">
+                        <h3 class="mb-3">Migração para as Cidades</h3>
+                        <p class="lead">Entre 1950 e 2020, a população urbana no Brasil passou de 36% para mais de 87%.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item bg-light p-5">
+                    <div class="d-block w-100">
+                        <h3 class="mb-3">Campo e Cidade São Interdependentes</h3>
+                        <p class="lead">O campo fornece alimentos e matérias-primas, enquanto a cidade oferece tecnologia, serviços e infraestrutura.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                    style="background-color: rgba(0,0,0,0.3); border-radius: 50%; padding: 10px;">
+                </span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                    style="background-color: rgba(0,0,0,0.3); border-radius: 50%; padding: 10px;">
+                </span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <div class="modal fade" id="modalAgua" tabindex="-1" aria-labelledby="modalAguaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAguaLabel">Acessibilidade à Água</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        A acessibilidade à água no meio rural é um dos principais fatores para garantir a qualidade de vida e a produção sustentável no campo. Muitas comunidades ainda enfrentam dificuldades para obter água potável, especialmente em regiões semiáridas ou afastadas de centros urbanos.
+                        Ter acesso fácil e seguro à água é essencial para irrigação, higiene, consumo humano e criação de animais. Quando falta água, há prejuízos na produção agrícola, na saúde das famílias e no desenvolvimento local.
+                        Por isso, é fundamental investir em soluções como cisternas, poços, barragens e sistemas de captação da água da chuva. Essas iniciativas promovem autonomia, aumentam a produtividade no campo e ajudam a enfrentar os efeitos das mudanças climáticas.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalEnergia" tabindex="-1" aria-labelledby="modalEnergiaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalEnergiaLabel">Energia Rural</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        A energia elétrica no meio rural é essencial para o desenvolvimento das atividades agrícolas e para melhorar a qualidade de vida das famílias do campo. Ela permite o funcionamento de sistemas de irrigação, máquinas, resfriadores de leite, iluminação e acesso à informação e tecnologia.
+                        A falta de energia ou o fornecimento instável dificulta a produção, o armazenamento de alimentos e o conforto nas residências. Além disso, limita o crescimento econômico e a permanência das famílias no campo.
+                        Investir em fontes de energia renovável, como a solar e a eólica, é uma alternativa sustentável que reduz custos e impactos ambientais, promovendo autonomia energética e fortalecendo a agricultura familiar.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalProducao" tabindex="-1" aria-labelledby="modalProducaoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalProducaoLabel">Produção e Industrialização</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        A produção no campo é o ponto de partida para o abastecimento das cidades. Ela envolve o cultivo de alimentos, criação de animais e extração de matérias-primas. A industrialização entra como etapa fundamental para transformar esses recursos em produtos prontos para o consumo.
+                        Quando a produção rural se conecta com a indústria, surgem novas oportunidades de emprego, renda e desenvolvimento regional. Além disso, agrega valor ao que é produzido, fortalece a economia local e reduz desperdícios.
+                        Integrar o campo à indústria é essencial para um sistema mais eficiente, sustentável e justo — do produtor ao consumidor.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <footer>
+        <p>&copy; 2025 Agrinho - Todos os direitos reservados.</p>
+        <p>Juntos para o futuro da agricultura.</p>
+    </footer>
+</body>
+</html>

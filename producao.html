@@ -17,7 +17,7 @@
   /* Estilo da seção de cabeçalho */
   .cabecalho {
     color: #fff; /* Texto branco */
-    background-color: #4CAF50; /* Cor de fundo azul */
+    background-color: #b6a50d; /* Cor de fundo azul */
     text-align: center;
     padding: 15px 0; /* Diminui o padding para ajustar o tamanho */
     margin: 0; /* Sem margem */
@@ -208,7 +208,7 @@
       <span>o</span>
       <span> </span>
       <span>C</span>
-      <span>I</span>
+      <span>i</span>
       <span>d</span>
       <span>a</span>
       <span>d</span>
@@ -234,14 +234,8 @@
 
 <div class="container text-center mt-4">
   <div class="d-flex justify-content-center">
-
-
-
-
-
-    
-    <!-- Verde -->   
-<a href="index.html">
+    <!-- Verde -->
+    <a href="index.html">
   <button type="button" class="light-sweep-button green m-2">
     <span class="house">🏠</span> Página Inicial <span class="house">🏠</span>
   </button>
@@ -316,13 +310,8 @@
   }
 </style>
 
-
-
-
-
-
     <!-- Cinza -->
-<a href="energia.html">
+   <a href="energia.html">
   <button type="button" class="btn btn-secondary m-2 fancy-button">
     <span class="flash">⚡︎</span> Energia Rural <span class="flash">⚡︎</span>
   </button>
@@ -409,14 +398,8 @@
     color: #ffd700;
   }
 </style>
-
-
-
-
-
-
     <!-- Azul -->
-<a href="agua.html">
+  <a href="agua.html">
   <button type="button" class="btn btn-primary m-2 water-button">
     <span class="wave-icon">💧</span> Acessibilidade a Água <span class="wave-icon">💧</span>
   </button>
@@ -501,86 +484,437 @@
   }
 </style>
 
-
-
     <!-- Amarelo -->
-<a href="producao.html">
-  <button type="button" class="btn btn-warning m-2 light-sweep-button">
-    <span class="tractor">🚜</span> Produção <span class="tractor">🚜</span>
-  </button>
-</a>
+    <a href="producao.html">
+      <button type="button" class="btn btn-warning m-2">🚜 Produção 🚜</button>
+    </a>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Primeira seção -->
+  <div class="container">
+  <div class="row pt-5 mb-4"> <!-- adicionei mb-4 para margem embaixo -->
+    <div class="col">
+      <h2 style="margin-bottom: 15px;">A Produção Rural: Importância, Desafios e Sustentabilidade</h2>
+      <p class="alinha" style="margin-bottom: 40px; text-align: justify;">
+        
+
+A produção rural é uma das principais atividades econômicas em diversas regiões do mundo, sendo responsável pelo fornecimento de alimentos, matérias-primas e produtos essenciais para a sociedade. Envolve o cultivo de vegetais, frutas, grãos e a criação de animais para consumo humano e industrial.
+
+No Brasil, por exemplo, a produção rural tem papel fundamental na economia, destacando-se como um dos maiores exportadores de soja, café, carne bovina e frango. A agricultura familiar também tem grande importância, pois é responsável por uma parcela significativa dos alimentos que chegam às mesas dos brasileiros.
+
+Apesar de sua relevância, a produção rural enfrenta diversos desafios, como a dependência do clima, o uso excessivo de agrotóxicos, o desmatamento e a degradação do solo. Além disso, muitos produtores lidam com a falta de acesso a crédito, tecnologia e infraestrutura adequada para escoar a produção.
+
+Nos últimos anos, tem ganhado força a ideia de produção rural sustentável, que busca aliar produtividade com a preservação ambiental. Práticas como a rotação de culturas, o uso de fertilizantes naturais, o reflorestamento de áreas degradadas e o uso de tecnologias de precisão têm contribuído para uma agricultura mais equilibrada e responsável.
+
+A valorização do campo, a capacitação dos produtores e o incentivo a políticas públicas voltadas para o desenvolvimento rural são passos importantes para garantir um futuro mais justo, produtivo e sustentável para todos.
+    </div>
+  </div>
+
+
+  <h2 class="text-center mb-4">Mais sobre a Produção Rural</h2>
+  <div class="row justify-content-center gap-4">
+<!-- Card 1 - Energia Eólica -->
+<div class="card shadow-lg" style="width: 30rem;">
+  <img src="./assets/image/IMG_20250607_231227.jpg" class="card-img-top" alt="Energia Eólica" style="height: 400px; object-fit: cover;">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">Colheita em Movimento</h5>
+    <p class="card-text">Tecnologia e eficiência no campo: a produção é feita com máquinas modernas e profissionais qualificados, garantindo agilidade e qualidade do grão do campo ao caminhão.</p>
+    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalEolica">Saiba mais</button>
+  </div>
+</div>
+
+<!-- Card 2 - Energia Solar -->
+<div class="card shadow-lg" style="width: 30rem;">
+  <img src="./assets/image/ads.jpg" class="card-img-top" alt="Energia Solar" style="height:400px; object-fit: cover;">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">Milho de Qualidade, do Campo à Mesa</h5>
+    <p class="card-text">Colhido com cuidado e produzido com responsabilidade, o milho é símbolo de uma agricultura forte, sustentável e voltada para alimentar o Brasil e o mundo.</p>
+    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalSolar">Saiba mais</button>
+  </div>
+</div>
+
+
+
+<!-- Modal Energia Eólica -->
+<div class="modal fade" id="modalEolica" tabindex="-1" aria-labelledby="modalEolicaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEolicaLabel">Colheita em Movimento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          A colheita é uma das etapas mais importantes da produção agrícola, exigindo precisão, planejamento e tecnologia. Com o avanço das máquinas agrícolas, o processo de colheita se tornou mais rápido, eficiente e seguro. Hoje, colheitadeiras modernas são equipadas com sensores, GPS, piloto automático e sistemas de monitoramento em tempo real, permitindo uma coleta uniforme e de alta qualidade.
+
+Essas tecnologias ajudam a reduzir perdas no campo, aumentam a produtividade e ainda possibilitam o armazenamento correto dos dados da lavoura, o que facilita o planejamento das próximas safras. O transporte da produção é feito de maneira sincronizada, com caminhões posicionados estrategicamente para receber os grãos diretamente das colheitadeiras, garantindo agilidade e preservação da qualidade do produto.
+        </p>
+        <img src="./assets/image/cata.jpg" class="img-fluid rounded mt-3" alt="Imagem energia eólica">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Energia Solar -->
+<div class="modal fade" id="modalSolar" tabindex="-1" aria-labelledby="modalSolarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSolarLabel">Milho de Qualidade, do Campo à Mesa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          O milho é um dos alimentos mais versáteis e consumidos do mundo, e no Brasil, ele é parte essencial da dieta de milhões de pessoas. Mas até chegar à mesa dos brasileiros, o milho percorre um longo caminho — que começa com o cuidado no plantio, passa pela colheita tecnológica e segue com um rígido processo de armazenamento, transporte e beneficiamento.
+
+Durante o cultivo, o solo é preparado com técnicas modernas, e as sementes utilizadas são selecionadas para garantir boa produtividade e resistência a pragas. Ao fim do ciclo, a colheita é feita com equipamentos que preservam a integridade dos grãos e evitam perdas, contribuindo para uma produção eficiente.
+        </p>
+        <img src="./assets/image/spigjnsfdipuh.jpg" class="img-fluid rounded mt-3" alt="Imagem energia solar">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card para mostrar mapa -->
+<div class="card shadow-lg" style="width: 30rem; margin: 2rem auto;">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">Mapa da Produção Rural no Brasil</h5>
+    <p class="card-text">
+      Clique no botão abaixo para visualizar o mapa interativo com os dados agrícolas dos estados brasileiros.
+    </p>
+    <button id="btnMostrarMapa" class="btn btn-primary mt-auto">Mostrar Mapa do Brasil</button>
+  </div>
+</div>
+
+<!-- Container do mapa, inicialmente oculto -->
+<div id="mapContainer" style="display:none; max-width: 900px; margin: 0 auto; padding-bottom: 2rem;">
+  <h2>Mapa das Fazendas e Centros de Produção no Brasil</h2>
+  <div id="map" style="height: 600px; width: 100%; border: 1px solid #ccc;"></div>
+</div>
+
+<!-- Leaflet CSS e JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Função para criar o mapa (chamada quando o botão for clicado)
+  function criarMapa() {
+    // Só cria uma vez para evitar duplicação
+    if(window.mapaCriado) return;
+    window.mapaCriado = true;
+
+    const map = L.map('map', {
+      minZoom: 4,
+      maxZoom: 10,
+      maxBounds: [
+        [-35.0, -75.0],
+        [5.5, -32.0]
+      ]
+    }).setView([-14.2350, -51.9253], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const estadosDados = {
+      'Acre': {areaAgricola: '0,3 milhões ha', producaoAnual: '100 mil t', principaisCulturas: 'Castanha, mandioca'},
+      'Alagoas': {areaAgricola: '0,6 milhões ha', producaoAnual: '1,5 milhões t', principaisCulturas: 'Cana-de-açúcar, milho'},
+      'Amapá': {areaAgricola: '0,2 milhões ha', producaoAnual: '50 mil t', principaisCulturas: 'Frutas tropicais, mandioca'},
+      'Amazonas': {areaAgricola: '1,1 milhão ha', producaoAnual: '500 mil t', principaisCulturas: 'Frutas tropicais, castanha-do-pará'},
+      'Bahia': {areaAgricola: '10,5 milhões ha', producaoAnual: '30 milhões t', principaisCulturas: 'Cana-de-açúcar, soja, algodão'},
+      'Ceará': {areaAgricola: '2,5 milhões ha', producaoAnual: '3 milhões t', principaisCulturas: 'Feijão, milho, algodão'},
+      'Distrito Federal': {areaAgricola: '0,2 milhões ha', producaoAnual: '1 milhão t', principaisCulturas: 'Soja, milho, feijão'},
+      'Espírito Santo': {areaAgricola: '1,1 milhões ha', producaoAnual: '1,2 milhões t', principaisCulturas: 'Café, milho, frutas'},
+      'Goiás': {areaAgricola: '7,5 milhões ha', producaoAnual: '20 milhões t', principaisCulturas: 'Soja, milho, algodão'},
+      'Maranhão': {areaAgricola: '5,0 milhões ha', producaoAnual: '6 milhões t', principaisCulturas: 'Soja, arroz, milho'},
+      'Mato Grosso': {areaAgricola: '27,0 milhões ha', producaoAnual: '60 milhões t', principaisCulturas: 'Soja, milho, algodão'},
+      'Mato Grosso do Sul': {areaAgricola: '12,5 milhões ha', producaoAnual: '18 milhões t', principaisCulturas: 'Soja, milho, pecuária'},
+      'Minas Gerais': {areaAgricola: '14,2 milhões ha', producaoAnual: '45 milhões t', principaisCulturas: 'Milho, soja, café'},
+      'Pará': {areaAgricola: '4,5 milhões ha', producaoAnual: '5 milhões t', principaisCulturas: 'Cacau, mandioca, açaí'},
+      'Paraíba': {areaAgricola: '1,6 milhões ha', producaoAnual: '2 milhões t', principaisCulturas: 'Algodão, milho, feijão'},
+      'Paraná': {areaAgricola: '14,5 milhões ha', producaoAnual: '50 milhões t', principaisCulturas: 'Soja, milho, trigo'},
+      'Pernambuco': {areaAgricola: '2,9 milhões ha', producaoAnual: '8 milhões t', principaisCulturas: 'Algodão, cana-de-açúcar, milho'},
+      'Piauí': {areaAgricola: '3,1 milhões ha', producaoAnual: '3,5 milhões t', principaisCulturas: 'Algodão, soja, milho'},
+      'Rio de Janeiro': {areaAgricola: '0,4 milhões ha', producaoAnual: '2 milhões t', principaisCulturas: 'Café, banana, mandioca'},
+      'Rio Grande do Norte': {areaAgricola: '1,4 milhões ha', producaoAnual: '1,7 milhões t', principaisCulturas: 'Melão, cana, milho'},
+      'Rio Grande do Sul': {areaAgricola: '11,7 milhões ha', producaoAnual: '40 milhões t', principaisCulturas: 'Trigo, soja, milho'},
+      'Rondônia': {areaAgricola: '3,0 milhões ha', producaoAnual: '2 milhões t', principaisCulturas: 'Mandioca, soja, milho'},
+      'Roraima': {areaAgricola: '0,5 milhões ha', producaoAnual: '150 mil t', principaisCulturas: 'Mandioca, milho'},
+      'Santa Catarina': {areaAgricola: '5,1 milhões ha', producaoAnual: '15 milhões t', principaisCulturas: 'Soja, milho, feijão'},
+      'São Paulo': {areaAgricola: '7,3 milhões ha', producaoAnual: '50 milhões t', principaisCulturas: 'Cana-de-açúcar, laranja, milho'},
+      'Sergipe': {areaAgricola: '0,7 milhões ha', producaoAnual: '1 milhão t', principaisCulturas: 'Cana-de-açúcar, mandioca'},
+      'Tocantins': {areaAgricola: '6,0 milhões ha', producaoAnual: '4 milhões t', principaisCulturas: 'Soja, milho, arroz'}
+    };
+
+    const coordenadasEstados = {
+      'Acre': [-9.0238, -70.8120],
+      'Alagoas': [-9.5713, -36.7820],
+      'Amapá': [1.4156, -51.7705],
+      'Amazonas': [-3.1190, -60.0217],
+      'Bahia': [-12.9704, -38.5124],
+      'Ceará': [-5.4984, -39.3206],
+      'Distrito Federal': [-15.7942, -47.8822],
+      'Espírito Santo': [-20.3155, -40.3128],
+      'Goiás': [-16.6864, -49.2643],
+      'Maranhão': [-5.4029, -45.0187],
+      'Mato Grosso': [-12.6819, -56.9211],
+      'Mato Grosso do Sul': [-20.7722, -54.7857],
+      'Minas Gerais': [-18.5122, -44.5550],
+      'Pará': [-3.4168, -52.4453],
+      'Paraíba': [-7.1153, -34.8641],
+      'Paraná': [-24.9557, -53.4591],
+      'Pernambuco': [-8.0476, -34.8770],
+      'Piauí': [-7.7183, -42.7289],
+      'Rio de Janeiro': [-22.9068, -43.1729],
+      'Rio Grande do Norte': [-5.7945, -36.4930],
+      'Rio Grande do Sul': [-30.0346, -51.2177],
+      'Rondônia': [-10.8303, -63.3421],
+      'Roraima': [1.8892, -61.2227],
+      'Santa Catarina': [-27.2423, -50.2189],
+      'São Paulo': [-23.5505, -46.6333],
+      'Sergipe': [-10.9472, -37.0731],
+      'Tocantins': [-10.1756, -48.2982]
+    };
+
+    for (const estado in estadosDados) {
+      const coords = coordenadasEstados[estado];
+      const dados = estadosDados[estado];
+      const popupContent = `
+        <b>${estado}</b><br>
+        <i>Área Agrícola:</i> ${dados.areaAgricola}<br>
+        <i>Produção Anual:</i> ${dados.producaoAnual}<br>
+        <i>Principais Culturas:</i> ${dados.principaisCulturas}
+      `;
+      L.marker(coords).addTo(map).bindPopup(popupContent);
+    }
+  }
+
+  // Evento do botão para mostrar o mapa
+  document.getElementById('btnMostrarMapa').addEventListener('click', () => {
+    const mapaDiv = document.getElementById('mapContainer');
+    if (mapaDiv.style.display === 'none') {
+      mapaDiv.style.display = 'block';
+      criarMapa();
+      document.getElementById('btnMostrarMapa').innerText = 'Esconder Mapa';
+    } else {
+      mapaDiv.style.display = 'none';
+      document.getElementById('btnMostrarMapa').innerText = 'Mostrar Mapa do Brasil';
+    }
+  });
+</script>
+
+
+
+<!-- Linha do Tempo Minimalista Amarela -->
+<div class="timeline-container" style="max-width: 700px; margin: 3rem auto; padding: 1rem;">
+  <h2 style="text-align:center; margin-bottom: 2rem; color: #b8860b;">Linha do Tempo da Produção Rural</h2>
+  <div class="timeline">
+
+    <div class="timeline-event">
+      <div class="timeline-date">1950</div>
+      <div class="timeline-content">
+        <h4>Início da mecanização</h4>
+        <p>Introdução das primeiras máquinas agrícolas, aumentando a produtividade e eficiência no campo.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-date">1970</div>
+      <div class="timeline-content">
+        <h4>Expansão do uso de fertilizantes</h4>
+        <p>Adoção crescente de fertilizantes químicos para melhorar a qualidade do solo e a produção.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-date">1990</div>
+      <div class="timeline-content">
+        <h4>Popularização da agricultura sustentável</h4>
+        <p>Práticas como rotação de culturas e agroflorestas começaram a ser implementadas para preservar o meio ambiente.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-date">2010</div>
+      <div class="timeline-content">
+        <h4>Uso de tecnologia digital</h4>
+        <p>Implementação de sensores, drones e softwares para monitoramento e gestão da produção rural.</p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-date">2025</div>
+      <div class="timeline-content">
+        <h4>Futuro da produção rural</h4>
+        <p>Expectativas para a integração da inteligência artificial e automação completa das fazendas.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <style>
-  .light-sweep-button {
-    position: relative;
-    background-color: #ffc107 !important;  
-    color: #ffffff !important;              
-    font-weight: 700;
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
+.timeline {
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid #b8860b;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-  .light-sweep-button::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      120deg,
-      rgba(255,255,255,0) 30%,
-      rgba(255,255,255,0.12) 50%,
-      rgba(255,255,255,0) 70%
-    );
-    transform: rotate(25deg) translateX(-100%);
-    transition: transform 0.7s ease;
-    pointer-events: none;
-    border-radius: 8px;
-    z-index: 0;
-  }
+.timeline-event {
+  position: relative;
+  padding-left: 15px;
+}
 
-  .light-sweep-button:hover::before {
-    transform: rotate(25deg) translateX(100%);
-  }
+.timeline-event::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  background-color: #f0c419;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(240, 196, 25, 0.6);
+}
 
-  .light-sweep-button:hover {
-    box-shadow:
-      0 0 4px #b0b0b0,
-      0 0 8px #a0a0a0,
-      0 0 14px #909090;
-    transform: translateY(-5px);
-    color: #ffffff !important;
-  }
+.timeline-date {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #b8860b;
+  margin-bottom: 0.3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .light-sweep-button > * {
-    position: relative;
-    z-index: 1;
-  }
+.timeline-content h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #b8860b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  @keyframes tractorPulse {
-    0%, 100% {
-      transform: scale(1);
-      filter: drop-shadow(0 0 3px #aaaaaa);
-    }
-    50% {
-      transform: scale(1.12);
-      filter: drop-shadow(0 0 6px #999999);
-    }
-  }
-
-  .tractor {
-    display: inline-block;
-    animation: tractorPulse 2s infinite ease-in-out;
-  }
+.timeline-content p {
+  margin: 0.2rem 0 0 0;
+  color: #555;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 </style>
 
 
 
+<section id="receitas-produtos" style="padding: 2rem;">
+  <h2>Produtos e Receitas da Região</h2>
+
+  <div class="cards-receitas" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+
+    <div class="card" style="flex: 1 1 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+      <img src="./assets/image/IMG_20250607_231239.jpg" alt="Milho" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3>Milho Verde</h3>
+        <p>Milho colhido no ponto ideal, rico em sabor e textura.</p>
+      </div>
+    </div>
+
+    <div class="card" style="flex: 1 1 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+      <img src="./assets/image/mt.jpg" alt="Pamonha" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3>Pinhão e Chimarrão</h3>
+        <p>Tradição gaúcha que aquece o coração do campo e une famílias ao redor da cultura.</p>
+      </div>
+    </div>
+
+    <div class="card" style="flex: 1 1 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+      <img src="./assets/image/fj.jpg" alt="Café" style="width: 100%; height: 200px; object-fit: cover;">
+      <div style="padding: 1rem;">
+        <h3>feijão</h3>
+        <p>Base da alimentação brasileira, símbolo de sustento e sabor no prato do campo.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo com Footer</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    .conteudo {
+      min-height: 100vh; /* Garante altura mínima para empurrar o footer */
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      background-color: #b6a50d;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      width: 100%;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+</body>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      background-color: #106cc2;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Conteúdo da página -->
+  </main>
+
+  <footer>
+    <p style="margin: 0;">&copy; 2025 Agrinho - Todos os direitos reservados.</p>
+    <p style="margin: 0;">Juntos para o futuro da agricultura.</p>
+  </footer>
+</body>
+</html>
 
 
 
@@ -591,46 +925,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

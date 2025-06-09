@@ -1,3 +1,9 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .cabecalho{
     color: white;
     background-color: black;
@@ -7,4 +13,103 @@
 
 .cabecalho h3{
     color: rgb(206, 206, 8);
+}
+
+p .alinha{
+    text-align: right;
+}
+.img-agro{
+    width: 300px;
+}
+
+.br-3{
+    border-radius: 15px;
+}
+
+.img-card{
+    max-height: 250px;
+}
+
+.img-slide{
+    max-height: 400px;
+}
+
+
+
+.container .row div {
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.container .row h3 {
+  font-size: 2.5rem;
+  color: #2a9d8f;
+  margin-bottom: 10px;
+}
+
+.container .row p {
+  font-size: 1.1rem;
+  color: #264653;
+}
+.timeline ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.timeline li {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #00acc1;
+  position: relative;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: #00acc1;
+  border-radius: 50%;
+}
+.voce-sabia .cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.voce-sabia .card {
+  background-color: #b2ebf2;
+  border-radius: 10px;
+  padding: 1rem;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: 600;
+  color: #006064;
+}
+.card img {
+  height: 125px;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-text {
+  text-align: justify;
 }
